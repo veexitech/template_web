@@ -1,7 +1,12 @@
 import React from "react";
+import { RxExit } from "react-icons/rx";
+import { FiLogOut } from "react-icons/fi";
+
+import StyleIconMenu from "../Menu/stylesMenu";
 import {
   Container,
   ContainerInforProfile,
+  ContainerIconExit,
   DataProfile,
   StatusProfile,
   ContainerImageProfile,
@@ -26,7 +31,9 @@ const Profile: React.FC<IProfile> = (props) => {
           leandro.sacramento98@gmail.com222222222222
         </SubDataProfile>
       </ContainerInforProfile>
-      {/* <ContainerIconExit></ContainerIconExit> */}
+      <ContainerIconExit>
+        <FiLogOut size={StyleIconMenu.size} color={StyleIconMenu.color} />
+      </ContainerIconExit>
     </Container>
   );
 };

@@ -1,27 +1,17 @@
 import React from "react";
-import { Container, ContainerMenus } from "./styles";
-import MenuTitle from "../MenuTitle";
-import MenuIcon from "../MenuIcon";
+import { ContainerMenus } from "./styles";
+import Menu from "../Menu";
+import { MENU } from "../../../../system/menu";
+
 interface IMenus {}
 
 const Menus: React.FC<IMenus> = (props) => {
   const {} = props;
-  const MenusOptions = [
-    { title: "Home", icon: null, href: "" },
-    { title: "Dashboard", icon: null, href: "" },
-    { title: "Projects", icon: null, href: "" },
-    { title: "Tasks", icon: null, href: "" },
-    { title: "Settings", icon: null, href: "" },
-    { title: "Messages", icon: null, href: "" },
-  ];
 
   return (
     <ContainerMenus>
-      {MenusOptions.map((menu) => (
-        <Container>
-          <MenuIcon />
-          <MenuTitle title={menu.title} />
-        </Container>
+      {MENU.map((menu, index) => (
+        <Menu menu={menu} />
       ))}
     </ContainerMenus>
   );

@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, ContainerMenus } from "./styles";
-import MenuTitle from "../MenuTitle";
-import MenuIcon from "../MenuIcon";
+import { ContainerMenus } from "./styles";
+import Menu from "../Menu";
+import { MENUS_CONFIGS } from "../../../../system/menu";
 interface IMenuConfigs {}
 
 const MenuConfigs: React.FC<IMenuConfigs> = (props) => {
@@ -9,14 +9,9 @@ const MenuConfigs: React.FC<IMenuConfigs> = (props) => {
 
   return (
     <ContainerMenus>
-      <Container>
-        <MenuIcon />
-        <MenuTitle title="Messages" />
-      </Container>
-      <Container>
-        <MenuIcon />
-        <MenuTitle title="Support" />
-      </Container>
+      {MENUS_CONFIGS.map((menu) => (
+        <Menu menu={menu} />
+      ))}
     </ContainerMenus>
   );
 };

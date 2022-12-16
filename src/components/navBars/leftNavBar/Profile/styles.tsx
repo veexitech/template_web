@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import imgProfile from "../../../../assets/womanProfile.jpg";
+import StylesMenu from "../Menu/stylesMenu";
+
 export const Container = styled.div`
   display: flex;
   cursor: pointer;
@@ -36,17 +38,19 @@ export const StatusProfile = styled.div`
 
 export const ContainerIconExit = styled.div`
   display: flex;
-  min-width: 30px;
-  height: 30px;
-
-  background-color: #cacaca;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  &:hover {
+    background-color: ${StylesMenu.backgroundColorHover};
+  }
 `;
 export const ContainerInforProfile = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
   color: #c2c6cf;
-  width: calc(100% - 60px);
+  width: calc(100% - 160px);
   height: auto;
 `;
 export const SubDataProfile = styled.div`

@@ -3,12 +3,13 @@ import { Container } from "./styles";
 
 interface IMenuTitle {
   title: string;
+  style?: React.CSSProperties;
 }
 
 const MenuTitle: React.FC<IMenuTitle> = (props) => {
-  const { title } = props;
+  const { title, style } = props;
 
-  return <Container>{title}</Container>;
+  return <Container style={style}>{title}</Container>;
 };
 
 export default MenuTitle;
