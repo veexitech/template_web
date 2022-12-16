@@ -7,8 +7,6 @@ export const Container = styled.div`
 `;
 export const ContainerMenu = styled.div`
   display: flex;
-  border: 1px solid green;
-  width: 250px;
 `;
 export const ContainerContent = styled.div`
   display: flex;
