@@ -56,7 +56,7 @@ export const darkTheme = {
     },
     text: {
       colors: {
-        default: "#c8cacf",
+        default: "rgb(190,198,205)",
         hover: "#fff",
         active: "#fff",
       },
@@ -67,8 +67,8 @@ export const darkTheme = {
       color: { default: "#969ba3", active: "#fff" },
     },
     submenu: {
-      background: { hover: "#11182575" },
-      text: { default: "rgb(69,74,83)", active: "#fff" },
+      background: { hover: "rgb(40, 47, 59, 0.75)" },
+      text: { default: "rgb(190,198,205)", active: "#fff" },
       divisor: "rgb(33,40,56)",
     },
   },
