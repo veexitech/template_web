@@ -1,7 +1,18 @@
 import styled from "styled-components";
+import imgProfile from "../../../../assets/logo.png";
 
+export const BackgroundImage = styled.div`
+  background-image: url(${imgProfile});
+  /* width: 100%; */
+  /* height: 50px; */
+  /* background-color: red; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex: 1;
+`;
 export const Container = styled.div`
   display: flex;
   height: 100px;
-  border: 1px solid red;
+  padding: 20px 10px;
 `;

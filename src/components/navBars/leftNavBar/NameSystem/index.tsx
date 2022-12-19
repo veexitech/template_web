@@ -1,12 +1,16 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, BackgroundImage } from "./styles";
 
 interface INameSystem {}
 
 const NameSystem: React.FC<INameSystem> = (props) => {
   const {} = props;
 
-  return <Container></Container>;
+  return (
+    <Container>
+      <BackgroundImage />
+    </Container>
+  );
 };
 
 export default NameSystem;
