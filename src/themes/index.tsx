@@ -2,16 +2,31 @@ interface ITheme {
   body: string;
   text: string;
   menu: {
-    text: string;
+    search: {
+      color: { default: string; placeholder: string };
+      background: string;
+    };
+    text: {
+      colors: {
+        default: string;
+        hover: string;
+        active: string;
+      };
+    };
     background: { default: string; hover: string };
     icon: {
       size: number;
-      color: string;
+      color: { default: string; active: string };
+    };
+    submenu: {
+      background: { hover: string };
+      text: { default: string; active: string };
+      divisor: string;
     };
   };
 }
 
-export const lightTheme = {
+export const lightTheme: ITheme = {
   body: "#FFF",
   text: "rgb(69,74,83)",
   menu: {
@@ -38,17 +53,9 @@ export const lightTheme = {
     },
   },
 };
-export const darkTheme = {
+export const darkTheme: ITheme = {
   body: "#111825",
   text: "#FAFAFA",
-  //   menu: {
-  //     text: "#c8cacf",
-  //     background: { default: "#111825", hover: "rgb(40, 47, 59)" },
-  //     icon: {
-  //       size: 25,
-  //       color: "#969ba3",
-  //     },
-  //   },
   menu: {
     search: {
       color: { default: "#fff", placeholder: "#fff7" },
