@@ -1,8 +1,8 @@
 import React from "react";
 import { FiMinus } from "react-icons/fi";
 import { IoMdAdd } from "react-icons/io";
-import { Container } from "./styles";
-import MenuTitle from "../MenuTitle";
+import { Container, MenuTitle } from "./styles";
+// import MenuTitle from "../MenuTitle";
 import MenuSubMenu from "./SubMenu";
 
 const Menu: React.FC<any> = (props) => {
@@ -23,9 +23,13 @@ const Menu: React.FC<any> = (props) => {
 
   return (
     <>
-      <Container isOpen={isOpen} onClick={() => handleClick()}>
+      <Container
+        isOpen={isOpen}
+        isActive={isOpen}
+        onClick={() => handleClick()}
+      >
         {menu.icon && menu.icon}
-        <MenuTitle title={menu.title} />
+        <MenuTitle>{menu.title}</MenuTitle>
         <HandleIconMenu subMenu={menu.subMenu} />
       </Container>
       <MenuSubMenu subMenu={menu.subMenu} isOpen={isOpen} />

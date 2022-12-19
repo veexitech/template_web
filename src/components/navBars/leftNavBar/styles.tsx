@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   width: 280px;
-  background: #111825;
+  background: ${({ theme }) => theme.menu.background.default};
   flex-direction: column;
   gap: 5px;
   padding: 30px 20px;

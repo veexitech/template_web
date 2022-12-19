@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import StylesMenu from "./stylesMenu";
 export const ContainerMenus = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,11 +15,20 @@ export const Container = styled.a<any>`
   padding: 10px;
   border-radius: 10px;
   transition: all 0.5s;
-  ${(props) =>
-    props.isOpen && `background-color: ${StylesMenu.backgroundColorHover};`}
+  color: ${({ theme }) => theme.menu.text.colors.default};
+  ${(props) => {
+    console.log("##### -> props", props);
+    if (props.isOpen) {
+      return `background-color: ${props.theme.menu.background.hover};`;
+    }
+  }}
+  /* isOpen && } */
   &:hover {
-    background-color: ${StylesMenu.backgroundColorHover};
+    background-color: ${({ theme }) => theme.menu.background.hover};
+    color: ${({ theme }) => theme.menu.text.colors.active};
   }
+  ${({ isActive, theme }) =>
+    isActive && `color: ${theme.menu.text.colors.active};`}
 `;
 export const SubMenu = styled.a<any>`
   display: flex;
@@ -42,4 +50,12 @@ export const ContainerSubMenu = styled.div`
   padding-left: 10px;
   margin-left: 10px;
   transition: all 0.5s;
+`;
+
+export const MenuTitle = styled.div<any>`
+  display: flex;
+  font-size: 14px;
+  color: inherit;
+  flex: 1;
+  font-weight: 600;
 `;

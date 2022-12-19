@@ -11,7 +11,7 @@ export const ContainerMenu = styled.div`
 export const ContainerContent = styled.div`
   display: flex;
   flex: 1;
-  background: #fff;
+  background: ${({ theme }) => theme.body};
   /* border: 1px solid blue; */
   margin: 10px 10px 10px 0;
   border-radius: 10px;

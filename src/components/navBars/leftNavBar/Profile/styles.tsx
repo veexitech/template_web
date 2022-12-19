@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import imgProfile from "../../../../assets/womanProfile.jpg";
-import StylesMenu from "../Menu/stylesMenu";
 
 export const Container = styled.div`
   display: flex;
@@ -21,7 +20,6 @@ export const ImageProfile = styled.div`
   min-width: 50px;
   height: 50px;
   border-radius: 100px;
-  /* background-color: #cacaca; */
   background-image: url(${imgProfile});
   background-position: center;
   background-repeat: no-repeat;
@@ -42,14 +40,14 @@ export const ContainerIconExit = styled.div`
   padding: 10px;
   border-radius: 10px;
   &:hover {
-    background-color: ${StylesMenu.backgroundColorHover};
+    background-color: ${({ theme }) => theme.menu.background.default.hover};
   }
 `;
 export const ContainerInforProfile = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  color: #c2c6cf;
+  color: ${({ theme }) => theme.menu.text.colors.default};
   width: calc(100% - 160px);
   height: auto;
 `;
