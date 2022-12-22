@@ -80,3 +80,31 @@ export const darkTheme: ITheme = {
     },
   },
 };
+
+export const blueTheme: ITheme = {
+  body: "rgb(0,53,160)",
+  text: "#FAFAFA",
+  menu: {
+    search: {
+      color: { default: "#fff", placeholder: "#fff7" },
+      background: "rgb(41,49,60)",
+    },
+    text: {
+      colors: {
+        default: "rgb(190,198,205)",
+        hover: "#fff",
+        active: "#fff",
+      },
+    },
+    background: { default: "rgb(0,53,160)", hover: "rgb(40, 47, 59)" },
+    icon: {
+      size: 25,
+      color: { default: "#969ba3", active: "#fff" },
+    },
+    submenu: {
+      background: { hover: "rgb(40, 47, 59, 0.75)" },
+      text: { default: "rgb(190,198,205)", active: "#fff" },
+      divisor: "rgb(33,40,56)",
+    },
+  },
+};
