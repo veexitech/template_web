@@ -7,28 +7,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Menu: React.FC<any> = (props) => {
   const { menu } = props;
-  const [isOpen, setIsOpen] = React.useState(false);
-
   const dispatch = useDispatch();
-  const { menus_active } = useSelector((state: any) => state.menu);
-  console.log("##### -> menus_active", menus_active);
-
-  React.useEffect(() => {
-    // dispatch({ type: "ADD_MENU", menu: MENU(theme) });
-  }, []);
+  const { menu_active } = useSelector((state: any) => state.menu);
+  const isMenuActive = menu_active == menu.key;
 
   const HandleIconMenu: React.FC<any> = ({ subMenu }) => {
     if (!subMenu) return <></>;
-    if (isOpen) return <FiMinus color={"#969ba3"} />;
+    if (isMenuActive) return <FiMinus color={"#969ba3"} />;
     return <IoMdAdd color={"#969ba3"} />;
   };
 
-  const handleClick = () => {
-    if (menu?.subMenu) {
-      setIsOpen((prevState) => !prevState);
-    }
-  };
-  const isMenuActive = menus_active.indexOf(menu.key) >= 0;
   return (
     <>
       <Container

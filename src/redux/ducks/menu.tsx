@@ -16,7 +16,7 @@ export const { Types, Creators } = createActions({
 const INITIAL_STATE = {
   menus: [],
   menus_filter: [],
-  menus_active: [1, 2],
+  menu_active: 1,
   menu_is_open: true,
 };
 
@@ -43,27 +43,10 @@ const edit_menu_filters = (state: any = INITIAL_STATE, action: any) => {
   return state;
 };
 
-const edit_menus_active = (state: any = INITIAL_STATE, action: any) => {
-  let menus_active = state.menus_active;
-  console.log("##### -> state.menus_active", state.menus_active);
-  const key_menu_selected = action.key;
-  let isActiveIndex = -1;
-
-  menus_active.map((key: any, index: any) => {
-    if (key === key_menu_selected) isActiveIndex = index;
-  });
-
-  if (isActiveIndex >= 0) {
-    console.log("CAIU NO IF MENU ACTIVE isActiveIndex", isActiveIndex);
-    menus_active.splice(isActiveIndex);
-  } else {
-    menus_active.push(key_menu_selected);
-  }
-  console.log("##### -> menus_active", menus_active);
-
+const edit_menu_active = (state: any = INITIAL_STATE, action: any) => {
   state = {
     ...state,
-    menus_active: menus_active,
+    menu_active: action.key,
   };
   return state;
 };
@@ -79,6 +62,6 @@ const edit_menu_is_open = (state: any = INITIAL_STATE, action: any) =>
 export default createReducer(INITIAL_STATE, {
   [Types.ADD_MENU]: add_menu,
   [Types.MENU_SEARCH]: edit_menu_filters,
-  [Types.EDIT_MENU_ACTIVE]: edit_menus_active,
+  [Types.EDIT_MENU_ACTIVE]: edit_menu_active,
   [Types.EDIT_MENU_IS_OPEN]: edit_menu_is_open,
 });
