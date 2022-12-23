@@ -13,7 +13,7 @@ const MenuConfigs: React.FC<IMenuConfigs> = (props) => {
   return (
     <ContainerMenus>
       {MENUS_CONFIGS(theme).map((menu) => (
-        <Menu menu={menu} />
+        <Menu menu={menu} key={menu.key} />
       ))}
     </ContainerMenus>
   );

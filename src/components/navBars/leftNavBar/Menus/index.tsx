@@ -19,7 +19,7 @@ const Menus: React.FC<IMenus> = (props) => {
   return (
     <ContainerMenus>
       {menu?.menus_filter.map((menu: any, index: any) => (
-        <Menu menu={menu} />
+        <Menu menu={menu} key={menu.key} />
       ))}
     </ContainerMenus>
   );

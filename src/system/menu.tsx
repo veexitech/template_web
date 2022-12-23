@@ -8,6 +8,7 @@ import { HiUsers } from "react-icons/hi";
 export const MENU = (theme: any) => {
   return [
     {
+      key: 1,
       title: "Home",
       icon: (
         <IoMdHome
@@ -19,6 +20,7 @@ export const MENU = (theme: any) => {
       href: "",
     },
     {
+      key: 2,
       title: "Dashboard",
       icon: (
         <FaTachometerAlt
@@ -29,6 +31,7 @@ export const MENU = (theme: any) => {
       href: "",
     },
     {
+      key: 3,
       title: "Projetos",
       icon: (
         <IoMdHome
@@ -39,16 +42,19 @@ export const MENU = (theme: any) => {
       href: "",
       subMenu: [
         {
+          key: 31,
           title: "FazFreestyle",
           href: "",
         },
         {
+          key: 32,
           title: "Barbearia",
           href: "",
         },
       ],
     },
     {
+      key: 4,
       title: "Tarefas",
       icon: (
         <IoMdHome
@@ -59,6 +65,7 @@ export const MENU = (theme: any) => {
       href: "",
     },
     {
+      key: 5,
       title: "Messages",
       icon: (
         <IoMdHome
@@ -74,6 +81,7 @@ export const MENU = (theme: any) => {
 export const MENUS_CONFIGS = (theme: any) => {
   return [
     {
+      key: 6,
       title: "Configurações",
       icon: (
         <RxGear
@@ -84,6 +92,7 @@ export const MENUS_CONFIGS = (theme: any) => {
       href: "",
     },
     {
+      key: 7,
       title: "Ajuda",
       icon: (
         <FaUserFriends
