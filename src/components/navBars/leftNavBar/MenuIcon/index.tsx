@@ -1,12 +1,20 @@
 import React from "react";
-import { Container } from "./styles";
+import { useTheme } from "styled-components";
 
-interface IMenuIcon {}
+interface IMenuIcon {
+  Icon: any;
+}
 
 const MenuIcon: React.FC<IMenuIcon> = (props) => {
-  const {} = props;
+  const { Icon } = props;
+  const theme = useTheme();
 
-  return <Container></Container>;
+  return (
+    <Icon
+      size={theme?.menu?.icon?.size}
+      color={theme.menu.icon.color.default}
+    />
+  );
 };
 
 export default MenuIcon;

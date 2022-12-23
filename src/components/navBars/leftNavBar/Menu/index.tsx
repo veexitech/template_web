@@ -4,7 +4,7 @@ import { IoMdAdd } from "react-icons/io";
 import { Container, MenuTitle } from "./styles";
 import MenuSubMenu from "./SubMenu";
 import { useDispatch, useSelector } from "react-redux";
-
+import MenuIcon from "../MenuIcon";
 const Menu: React.FC<any> = (props) => {
   const { menu } = props;
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Menu: React.FC<any> = (props) => {
         isActive={isMenuActive}
         onClick={() => dispatch({ type: "EDIT_MENU_ACTIVE", key: menu.key })}
       >
-        {menu.icon && menu.icon}
+        <MenuIcon Icon={menu.icon} />
         <MenuTitle>{menu.title}</MenuTitle>
         <HandleIconMenu subMenu={menu.subMenu} />
       </Container>
