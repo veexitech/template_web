@@ -72,7 +72,6 @@ export const MENU = (theme: any) => {
 };
 
 export const MENUS_CONFIGS = (theme: any) => {
-  console.log("##### -> theme", theme);
   return [
     {
       title: "Configurações",

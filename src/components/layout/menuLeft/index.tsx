@@ -5,8 +5,6 @@ import LeftNavBar from "../../navBars/leftNavBar";
 interface ImenuLeft {}
 
 const menuLeft: React.FC<ImenuLeft> = (props) => {
-  const {} = props;
-
   return (
     <Container>
       <ContainerMenu>

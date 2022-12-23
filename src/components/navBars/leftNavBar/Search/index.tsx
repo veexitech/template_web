@@ -1,14 +1,20 @@
 import React from "react";
 import { Container } from "./styles";
-import StyleIconMenu from "../Menu/stylesMenu";
 import { BiSearchAlt } from "react-icons/bi";
 import { useTheme } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
 
 interface ISearch {}
 
 const Search: React.FC<ISearch> = (props) => {
   const {} = props;
   const theme = useTheme();
+  const dispatch = useDispatch();
+  const [inputSearchMenu, setInputSearchMenu] = React.useState("");
+
+  React.useEffect(() => {
+    dispatch({ type: "MENU_SEARCH", menu_searched: inputSearchMenu });
+  }, [inputSearchMenu]);
 
   return (
     <Container>
@@ -21,7 +27,9 @@ const Search: React.FC<ISearch> = (props) => {
         className="inputSearch"
         type="text"
         placeholder="Pesquisar"
-      ></input>
+        value={inputSearchMenu}
+        onChange={(v) => setInputSearchMenu(v.target.value)}
+      />
     </Container>
   );
 };

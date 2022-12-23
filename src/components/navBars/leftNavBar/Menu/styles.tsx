@@ -17,7 +17,6 @@ export const Container = styled.a<any>`
   transition: all 0.5s;
   color: ${({ theme }) => theme.menu.text.colors.default};
   ${(props) => {
-    console.log("##### -> props", props);
     if (props.isOpen) {
       return `background-color: ${props.theme.menu.background.hover};`;
     }
