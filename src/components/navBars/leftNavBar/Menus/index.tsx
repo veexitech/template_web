@@ -13,7 +13,7 @@ const Menus: React.FC<IMenus> = (props) => {
   const menu = useSelector((state: any) => state.menu);
 
   React.useEffect(() => {
-    dispatch({ type: "ADD_MENU", menu: MENU });
+    // dispatch({ type: "ADD_MENU", menu: MENU });
   }, []);
 
   return (
