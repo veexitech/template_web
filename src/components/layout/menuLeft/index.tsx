@@ -9,7 +9,7 @@ interface ImenuLeft {
 
 const menuLeft: React.FC<ImenuLeft> = (props) => {
   const { children } = props;
-  console.log("##### -> children", children);
+
   return (
     <Container>
       <ContainerMenu>

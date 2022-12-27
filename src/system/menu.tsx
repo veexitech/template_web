@@ -94,7 +94,7 @@ export interface IMenu {
   subMenu?: ISubMenu[];
 }
 interface ISubMenu {
-  key: string;
+  key: number;
   title: string;
   href: string;
   path: string;

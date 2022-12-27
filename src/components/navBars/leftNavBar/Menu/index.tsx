@@ -17,12 +17,19 @@ const Menu: React.FC<any> = (props) => {
     return <IoMdAdd color={"#969ba3"} />;
   };
 
+  const handleClick = (e: any) => {
+    dispatch({ type: "EDIT_MENU_ACTIVE", key: menu.key });
+    e.preventDefault();
+    console.log("The link was clicked.");
+    // window.location.href = menu.subMenu ? undefined : menu.href;
+  };
+
   return (
     <>
       <Container
         isOpen={isMenuActive}
         isActive={isMenuActive}
-        onClick={() => dispatch({ type: "EDIT_MENU_ACTIVE", key: menu.key })}
+        onClick={handleClick}
         href={menu.subMenu ? undefined : menu.href}
       >
         <MenuIcon Icon={menu.icon} />
