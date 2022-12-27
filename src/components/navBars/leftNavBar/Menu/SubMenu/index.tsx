@@ -9,7 +9,7 @@ const MenuSubMenu: React.FC<any> = ({ subMenu, isOpen }) => {
       {subMenu &&
         subMenu.map((submenu: any) => {
           return (
-            <SubMenu isOpen={isOpen} key={submenu.key}>
+            <SubMenu href={submenu.href} isOpen={isOpen} key={submenu.key}>
               <MenuTitle>{submenu.title}</MenuTitle>
             </SubMenu>
           );

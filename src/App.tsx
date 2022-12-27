@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 
 import "./App.css";
 import MenuLeft from "./components/layout/menuLeft";
+import Routes from "./routes/";
 
 import GlobalStyles from "./styles/GlobalStyles";
 import { lightTheme, blueTheme, darkTheme } from "./themes";
@@ -30,7 +31,7 @@ const App = () => {
     <Provider store={store}>
       <ThemeProvider theme={handlerTheme(theme)}>
         <GlobalStyles />
-        <MenuLeft />
+        <Routes />
       </ThemeProvider>
     </Provider>
   );

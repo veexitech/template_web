@@ -16,6 +16,8 @@
     "react-hook-form": "^7.41.0",
     "react-icons": "^4.7.1",
     "react-redux": "^8.0.5",
+    "react-router": "^6.6.1",
+    "react-router-dom": "^6.6.1",
     "recharts": "^2.2.0",
     "redux": "^4.2.0",
     "reduxsauce": "^1.2.1",

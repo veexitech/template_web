@@ -23,6 +23,7 @@ const Menu: React.FC<any> = (props) => {
         isOpen={isMenuActive}
         isActive={isMenuActive}
         onClick={() => dispatch({ type: "EDIT_MENU_ACTIVE", key: menu.key })}
+        href={menu.subMenu ? undefined : menu.href}
       >
         <MenuIcon Icon={menu.icon} />
         <MenuTitle>{menu.title}</MenuTitle>
