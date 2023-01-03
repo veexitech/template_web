@@ -7,7 +7,6 @@ interface IMenus {}
 
 const Menus: React.FC<IMenus> = (props) => {
   const menu = useSelector((state: any) => state.menu);
-
   return (
     <ContainerMenus>
       {menu?.menus_filter.map((menu: any, index: any) => (

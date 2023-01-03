@@ -1,31 +1,30 @@
-import { FaTachometerAlt } from "react-icons/fa";
-import StyleMenu from "../components/navBars/leftNavBar/Menu/stylesMenu";
-import { IoMdHome } from "react-icons/io";
-import { FaUserFriends } from "react-icons/fa";
-import { RxExit, RxGear } from "react-icons/rx";
-import { HiUsers } from "react-icons/hi";
+import { IconProps } from "@iconify/react";
 
 export const MENU: IMenu[] = [
   {
     key: 1,
     title: "Home",
-    icon: IoMdHome,
+    iconProps: { icon: "mdi:home" },
     href: "/",
     path: "/",
     element: <div>Home</div>,
+    isPrivate: true,
+    permissions: ["Admin"],
   },
   {
     key: 2,
     title: "Dashboard",
-    icon: FaTachometerAlt,
+    iconProps: { icon: "carbon:dashboard" },
     href: "/dashboard",
     path: "/dashboard",
     element: <div>DASHBOARD</div>,
+    isPrivate: true,
+    permissions: ["Admin"],
   },
   {
     key: 3,
     title: "Projetos",
-    icon: IoMdHome,
+    iconProps: { icon: "ph:projector-screen-chart-light" },
     href: "",
     path: "/projetos",
     element: <div>projetos</div>,
@@ -36,6 +35,8 @@ export const MENU: IMenu[] = [
         href: "/projetos/fazfreestyle",
         path: "/projetos/fazfreestyle",
         element: <div>PRJ FazFreestyle</div>,
+        isPrivate: true,
+        permissions: ["Admin"],
       },
       {
         key: 32,
@@ -43,24 +44,30 @@ export const MENU: IMenu[] = [
         href: "/projetos/barbearia",
         path: "/projetos/barbearia",
         element: <div>PRJ Barbearias</div>,
+        isPrivate: true,
+        permissions: ["Admin"],
       },
     ],
   },
   {
     key: 4,
     title: "Tarefas",
-    icon: IoMdHome,
+    iconProps: { icon: "ep:tickets" },
     href: "/Tarefas",
     path: "/Tarefas",
     element: <div>Tarefas</div>,
+    isPrivate: true,
+    permissions: ["Admin"],
   },
   {
     key: 5,
     title: "Messages",
-    icon: IoMdHome,
+    iconProps: { icon: "jam:messages-f" },
     href: "/messages",
     path: "/messages",
     element: <div>Mensagens</div>,
+    isPrivate: true,
+    permissions: ["Admin"],
   },
 ];
 
@@ -68,18 +75,32 @@ export const MENUS_CONFIGS: IMenu[] = [
   {
     key: 6,
     title: "Configurações",
-    icon: RxGear,
+    iconProps: { icon: "icon-park-outline:setting-config" },
     href: "/configuracoes",
     path: "/configuracoes",
     element: <div>CONFIGURACOES</div>,
+    isPrivate: true,
+    permissions: ["Admin"],
   },
   {
     key: 7,
     title: "Ajuda",
-    icon: FaUserFriends,
+    iconProps: { icon: "material-symbols:help" },
     href: "/ajuda",
     path: "/ajuda",
     element: <div>AJUDA</div>,
+    isPrivate: true,
+    permissions: ["Admin"],
+  },
+];
+export const ROUTES: IRoute[] = [
+  {
+    key: 8,
+    title: "Login",
+    path: "/login",
+    element: <div>CONFIGURACOES</div>,
+    isPrivate: false,
+    permissions: ["Admin"],
   },
 ];
 export default [...MENU, ...MENUS_CONFIGS];
@@ -87,11 +108,21 @@ export default [...MENU, ...MENUS_CONFIGS];
 export interface IMenu {
   key: number;
   title: string;
-  icon: any;
+  iconProps: IconProps;
   href?: string;
   path: string;
   element?: any;
   subMenu?: ISubMenu[];
+  isPrivate?: boolean;
+  permissions?: string[];
+}
+export interface IRoute {
+  key: number;
+  title: string;
+  path: string;
+  element?: any;
+  isPrivate: boolean;
+  permissions?: string[];
 }
 interface ISubMenu {
   key: number;
@@ -99,4 +130,6 @@ interface ISubMenu {
   href: string;
   path: string;
   element: any;
+  isPrivate: boolean;
+  permissions?: string[];
 }

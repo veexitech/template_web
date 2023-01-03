@@ -24,7 +24,7 @@ export const Container = styled.a<any>`
   /* isOpen && } */
   &:hover {
     background-color: ${({ theme }) => theme.menu.background.hover};
-    color: ${({ theme }) => theme.menu.text.colors.active};
+    color: ${({ theme }) => theme.menu.text.colors.default};
   }
   ${({ isActive, theme }) =>
     isActive && `color: ${theme.menu.text.colors.active};`}

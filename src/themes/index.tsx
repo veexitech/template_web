@@ -38,13 +38,13 @@ export const lightTheme: ITheme = {
       colors: {
         default: "rgb(69,74,83)",
         hover: "rgb(39,96,191)",
-        active: "rgb(39,96,191)",
+        active: "#646cff",
       },
     },
     background: { default: "#FFF", hover: "rgb(240,245,255)" },
     icon: {
       size: 25,
-      color: { default: "rgb(201,205,208)", active: "rgb(39,96,191)" },
+      color: { default: "rgb(201,205,208)", active: "#646cff" },
     },
     submenu: {
       background: { hover: "rgb(240,245,255)" },

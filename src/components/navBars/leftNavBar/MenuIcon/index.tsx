@@ -1,18 +1,25 @@
 import React from "react";
 import { useTheme } from "styled-components";
-
+import Globe from "../../../../assets/svg/globe";
+import { Icon } from "@iconify/react";
 interface IMenuIcon {
-  Icon: any;
+  iconProps: any;
+  isMenuActive?: boolean;
 }
 
 const MenuIcon: React.FC<IMenuIcon> = (props) => {
-  const { Icon } = props;
+  const { iconProps, isMenuActive } = props;
   const theme = useTheme();
-
   return (
     <Icon
-      size={theme?.menu?.icon?.size}
-      color={theme.menu.icon.color.default}
+      color={
+        isMenuActive
+          ? theme.menu.icon.color.active
+          : theme.menu.icon.color.default
+      }
+      width={theme?.menu?.icon?.size}
+      height={theme?.menu?.icon?.size}
+      {...iconProps}
     />
   );
 };
